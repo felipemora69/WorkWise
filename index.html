@@ -3,40 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="styles.css">
     <title>WorkWise</title>
 </head>
 <body>
-    <header>
-        <h1>Your Website</h1>
-    </header>
 
-    <nav>
-        <div class="logo">
-            <a href="#">Home</a>
+    <!--Header Section-->
+    <header class="header">
+        <nav class="navbar">
+            <section class="flex">
+                <div class="logo">
+                    <a href="#">WorkWise</a>
+                </div>
+                <a href="#">Solutions</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Login/Signup</a>
+            </section>
+        </nav>
+    </header>    
+
+    <!--<section class="search-section">
+        <div class="search-form">
+            <input type="text" id="city" name="city" placeholder="Enter city">
+            <input type="text" id="date-range" name="date-range" placeholder="Select Date Range:">
+            <div id="time-picker-container" style="display:none;">
+                <input type="time" id="time-range" name="time-range" placeholder="Select Time Range:">
+            </div>
+            <label for="space-type">Space Type:</label>
+            <select id="space-type" name="space-type" placeholder="Space Type:">
+                <option value="meeting-room">Meeting Room</option>
+                <option value="rent-space">Rent Space by Days</option>
+                <option value="share-space">Share Space</option>
+                <option value="personal-desk">Personal Desk</option>
+                <option value="private-office">Private Office</option>
+                <option value="full-floor-office">Full Floor Office</option>
+            </select>
+            <button type="submit">Search</button>
         </div>
-        <a href="#">Solutions</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Login/Signup</a>
-    </nav>
+    </section>-->
 
-    <section>
-        <h2>Section 1</h2>
-        <p></p>
+    <!--Home Search-->
+
+    <section class="search-section">
+        <div class="search-form">
+            <input type="text" id="city" name="city" placeholder="Enter City">
+            <input type="text" id="date-range" name="date-range" placeholder="Select Date Range">
+            <div id="time-picker-container" style="display:none;">
+                <input type="text" id="time-range" name="time-range" placeholder="Select Time Range" readonly>
+            </div>
+            <input list="space-type-options" type="text" id="space-type" name="space-type" placeholder="Space Type">
+            <datalist id="space-type-options">
+                <option value="Meeting Room">
+                <option value="Rent Space by Days">
+                <option value="Share Space">
+                <option value="Personal Desk">
+                <option value="Private Office">
+                <option value="Full Floor Office">
+            </datalist>
+            <button type="submit">Search</button>
+        </div>
     </section>
 
-    <section>
-        <h2>Section 2</h2>
+    <div>
+        <h2>Searching for the perfect space?</h2>
         <p></p>
-    </section>
+    </div>
+
+    <!--Solutions-->
 
     <section>
-        <h2>Section 3</h2>
+        <h2>Unlock your dream office today!</h2>
+        <h3>Explore exclusive deals on selected private offices. Terms and conditions may apply.</h3>
         <p></p>
     </section>
 
     <footer>
         <p>&copy; 2024 WorkWise. All rights reserved.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
     
 </body>
 </html>

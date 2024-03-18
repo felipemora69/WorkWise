@@ -1,33 +1,79 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    outline: none;
+    border: none;
+    text-decoration: none;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+*::selection {
+    background-color: white;
+    color: #000;
+}
+
+*::-webkit-scrollbar {
+    height: 0.5 rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5rem;
+}
+
+html {
+    font-size: 75%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+/*-------Header------------*/
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+/*-------NavBar------------*/
+
+.header .navbar .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .navbar .flex .logo {
+    font-size: 2.2rem;
 }
 
 nav {
-    background-color: #555;
+    background-color: white;
     overflow: hidden;
 }
 
 nav a {
     float: left;
     display: block;
-    color: white;
+    color: #000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background-color: white;
     color: black;
 }
 
@@ -38,6 +84,58 @@ nav a:hover {
 section {
     padding: 20px;
 }
+
+/*--------Search Section --------------*/
+
+.search-section {
+    background-image: url('images/home-space.jpg');
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+.search-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.search-form input[type="text"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.search-form label {
+    color: white;
+    margin-bottom: 5px;
+}
+.search-form input, .search-form select, .search-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.search-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#time-picker-container {
+    margin-top: 10px;
+    width: 100%; /* Ensure the time picker container spans the entire width of its parent */
+}
+
+/*-------Footer----------*/
 
 footer {
     background-color: #333;
