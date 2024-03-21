@@ -9,25 +9,6 @@
     text-decoration: none;
 }
 
-*::selection {
-    background-color: white;
-    color: #000;
-}
-
-*::-webkit-scrollbar {
-    height: 0.5 rem;
-    width: 1rem;
-}
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 5rem;
-}
-
 html {
     font-size: 75%;
     overflow-x: hidden;
@@ -51,88 +32,88 @@ html {
 .header .navbar .flex {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-.header .navbar .flex .logo {
+.header .navbar .flex .logo a {
     font-size: 2.2rem;
+    margin-right: 40rem;
+    margin-left: 5rem;
+    font-weight: 400;
+    text-align: center;
 }
 
-nav {
-    background-color: white;
-    overflow: hidden;
-}
-
-nav a {
-    float: left;
-    display: block;
+.header .navbar .flex a {
+    display: inline-block;
     color: #000;
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.header .navbar .flex .logo a:hover {
+    color: #000;
+}
+
+.header .navbar .flex a:hover {
+    color: #2185D5;
+}
+
+/*--------Home Section --------------*/
+
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.search-section .half-width {
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+.search-section img {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    height: 60vh; /* Set a specific height (80% of the viewport height in this case) */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-radius: 10px;
+}
+
+.search-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.search-section h3 {
+    font-size: 1.8rem;
+    color: #303841;
+    margin-bottom: 15px;
+}
+
+.search-section p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.search-section .btn {
+    display: inline-block;
+    padding: 8px 13px;
+    margin-bottom: 10px;
+    background-color: #2185D5;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
     text-decoration: none;
 }
 
-nav a:hover {
-    background-color: white;
-    color: black;
-}
-
-.logo {
-    float: left;
-}
-
-section {
-    padding: 20px;
-}
-
-/*--------Search Section --------------*/
-
-.search-section {
-    background-image: url('images/home-space.jpg');
-    background-size: cover;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px;
-}
-.search-form {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-
-.search-form input[type="text"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-.search-form label {
-    color: white;
-    margin-bottom: 5px;
-}
-.search-form input, .search-form select, .search-form button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-}
-.search-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-#time-picker-container {
-    margin-top: 10px;
-    width: 100%; /* Ensure the time picker container spans the entire width of its parent */
+.search-section .btn:hover {
+    background-color: #1669b2;
 }
 
 /*-------Footer----------*/
