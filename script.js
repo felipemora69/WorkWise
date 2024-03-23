@@ -1,11 +1,27 @@
+// SECTION SPACES % HIGHLIGHTS
 // JavaScript to enable horizontal scrolling with touchpad gestures
 document.addEventListener("DOMContentLoaded", function() {
-    const container = document.querySelector(".scrolling-wrapper");
+    const solutionsContainer = document.querySelector(".scrolling-wrapper");
+    const spacesContainer = document.querySelector(".highlight-wrapper");
 
-    container.addEventListener("wheel", function(event) {
-        if (event.deltaY !== 0) {
+    document.addEventListener("wheel", function(event) {
+        if (isMouseInElement(event, solutionsContainer)) {
             event.preventDefault();
-            container.scrollLeft += event.deltaY;
+            if (event.deltaX !== 0) {
+                solutionsContainer.scrollLeft += event.deltaX;
+            }
+        } else if (isMouseInElement(event, spacesContainer)) {
+            event.preventDefault();
+            if (event.deltaX !== 0) {
+                spacesContainer.scrollLeft += event.deltaX;
+            }
         }
     });
+
+    function isMouseInElement(event, element) {
+        const rect = element.getBoundingClientRect();
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        return mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
+    }
 });
