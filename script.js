@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //Resnponsive design
+//Dropdown Menu
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('.menu').classList.toggle('show');
     this.classList.toggle('open');
