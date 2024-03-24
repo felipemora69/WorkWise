@@ -56,6 +56,11 @@ body {
 
 /*-------Navigation Links------------*/
 
+/* Menu Icon for the responsive design*/
+.dropdown-btn {
+    display: none; /* Initially hide for larger screens */
+}
+
 .menu-list {
     list-style-type: none;
     margin: 0;
@@ -407,3 +412,256 @@ footer {
 
 /*-------Responsive Design----------*/
 
+/* For screens up to 768px width */
+@media (max-width: 768px) {
+    /* Body */
+    body .search-section, .space-types, .highlights, .footer-container {
+        padding: 20px;        
+    }
+
+    /* Header */
+    .logo a {
+        padding-right: 10rem;
+        margin-left: 2rem;
+    }
+
+    /* Navigation Links */
+
+    .menu-list li a {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .menu-list .signup-link {
+        font-size: 1rem;
+        font-weight: 500;
+        padding-left: 0px;
+        border-left: none;
+    }
+
+    .dropdown-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .line {
+        width: 30px;
+        height: 2px;
+        background-color: #000;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle {
+        cursor: pointer; /* Add this line */
+    }
+    
+    .menu-toggle .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    /* Rotate animation */
+    .open .line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .open .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .open .line:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .menu.show {
+        display: block;
+    }
+
+    /* Home Section */
+    .search-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-section .half-width {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .search-section img {
+        height: auto;
+    }
+
+    .search-section h1 {
+        font-size: 2rem;
+    }
+
+    .search-section .btn {
+        font-size: 0.9rem;
+    }
+
+    /* Solutions */
+    .space-types {
+        padding: 20px 0;
+        margin-left: 0;
+    }
+
+    .space-types h2 {
+        font-size: 25px;
+        padding-left: 0;
+    }
+
+    .scrolling-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .space-type {
+        margin-left: 10px;
+    }
+
+    /* See all Solutions */
+    .see-all-solutions a {
+        margin-left: 10px;
+    }
+
+    /* Highlights Spaces */
+    .highlights {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .hh2, .hh3 {
+        padding-left: 0;
+    }
+
+    .highlight-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .highlight {
+        margin-left: 10px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .footer-section {
+        margin: 0 0 30px 0;
+        text-align: center;
+    }
+
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* For screens above 768px width */
+@media (min-width: 769px) {
+    /* Header */
+    .logo a {
+        padding-right: 30rem;
+        margin-left: 5rem;
+    }
+
+    /* Navigation Links */
+    .menu-list li a {
+        font-size: 1.2rem;
+    }
+
+    .menu-list .signup-link {
+        padding-left: 15px;
+
+    }
+
+    /* Home Section */
+    .search-section {
+        padding: 40px;
+    }
+
+    .search-section .half-width {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+
+    .search-section img {
+        height: 60vh;
+    }
+
+    .search-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .search-section .btn {
+        font-size: 0.8rem;
+    }
+
+    /* Solutions */
+    .space-types {
+        margin: 40px 0 100px 20px;
+        padding: 40px 0;
+    }
+
+    .space-types h2 {
+        font-size: 30px;
+    }
+
+    .scrolling-wrapper {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .space-type {
+        margin-left: 25px;
+    }
+
+    /* See all Solutions */
+    .see-all-solutions a {
+        margin-left: 25px;
+    }
+
+    /* Highlights Spaces */
+    .highlights {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .hh2, .hh3 {
+        padding-left: 28px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: row;
+        margin: 0 180px;
+    }
+
+    .footer-section {
+        margin-right: 100px;
+    }
+
+    .footer-section:last-child {
+        margin-right: 0;
+    }
+}

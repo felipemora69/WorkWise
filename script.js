@@ -25,3 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         return mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
     }
 });
+
+//Resnponsive design
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.menu').classList.toggle('show');
+    this.classList.toggle('open');
+});
