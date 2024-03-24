@@ -138,7 +138,17 @@ button[type="submit"]:hover {
     background-color: #61b0f0;
 }
 
+/*----Error message style----*/
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
 /* Responsive styles */
+
 @media (max-width: 768px) {
     .box {
         flex-direction: column; /* Added */
