@@ -19,16 +19,19 @@ body {
 
 .text {
     width: 600px;
+    padding: 0 20px;
 }
 
 .text h1 {
     font-size: 40px;
     color: #333;
+    margin-bottom: 20x;
 }
 
 .text p {
     font-size: 18px;
     color: #000;
+    line-height: 1.6;
 }
 
 .login-box {
@@ -130,4 +133,18 @@ button.login-btn:hover {
 }
 .signup-option p{
     color: black;
+}
+
+/*-----------Responsive design ---------*/
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .text,
+    .login-box {
+        width: 90%;
+        margin: 20px 0;
+    }
 }

@@ -1,32 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Add event listener to the form
-//     document.querySelector(".login-form").addEventListener("submit", function(event) {
-//         // Prevent the default form submission behavior
-//         event.preventDefault();
-
-//         // Get the values of username and password fields
-//         var username = document.getElementById("username").value;
-//         var password = document.getElementById("password").value;
-
-//         // For demonstration purposes, display the entered username and password
-//         alert("Username: " + username + "\nPassword: " + password);
-
-//         // You can replace the alert with code to send the username and password to a server for validation
-//         // Example AJAX request:
-//         /*
-//         var xhr = new XMLHttpRequest();
-//         xhr.open("POST", "login.php", true);
-//         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-//         xhr.onreadystatechange = function() {
-//             if (xhr.readyState === 4 && xhr.status === 200) {
-//                 // Handle the server response here
-//             }
-//         };
-//         xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
-//         */
-//     });
-// });
-
 // Function to handle login form submission
 function handleLogin(event) {
     event.preventDefault(); // Prevent default form submission
@@ -37,8 +8,18 @@ function handleLogin(event) {
 
     // Check if username and password are correct
     if (username === 'exampleuser' && password === 'examplepassword') {
-        // If correct, redirect to dashboard page
-        window.location.href = 'dashboard.html';
+        // Determine the role of the user (assuming you have this information)
+        const userRole = 'owner'; // Replace 'owner' with the actual role retrieved from your backend
+        
+        // Redirect based on user role
+        if (userRole === 'owner') {
+            window.location.href = 'owner_profile.html';
+        } else if (userRole === 'coworker') {
+            window.location.href = 'coworker_profile.html';
+        } else {
+            // Default redirection if role is not recognized
+            window.location.href = 'profile.html';
+        }
     } else {
         // If incorrect, display error message
         alert('Invalid username or password. Please try again.');
@@ -48,3 +29,5 @@ function handleLogin(event) {
 // Add event listener to the login form
 document.querySelector('.login-form').addEventListener('submit', handleLogin);
 
+// Add event listener to the login form
+document.querySelector('.login-form').addEventListener('submit', handleLogin);

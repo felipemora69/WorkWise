@@ -34,7 +34,6 @@ body {
     padding: 10px 20px;
     z-index: 1000;
     overflow: hidden;
-    
 }
 
 .container {
@@ -179,7 +178,7 @@ body {
 
 .space-types h2 {
     font-size: 30px;
-    justify-content: left;
+    text-align: left;
 }
 
 .scrolling-wrapper {

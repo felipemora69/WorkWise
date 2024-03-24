@@ -3,34 +3,37 @@ document.getElementById("signup-form").addEventListener("submit", function(event
 
     var fullname = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
-    var subject = "New Office Rental Sign Up";
-    var body = "Full Name: " + fullname + "\nEmail: " + email + "\nPassword: " + password;
-
-    var mailtoLink = "mailto:your_email@example.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-    // Open default email client with pre-filled email
-    window.location.href = mailtoLink;
-
-    alert("Thank you for signing up! We will contact you shortly.");
-    document.getElementById("signup-form").reset(); // Clear form fields on successful submission
-});
-
-//Redirect the page to their respective profile, when they select one of the options betwwen owner or coworker.
-document.getElementById("signup-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    var fullname = document.getElementById("fullname").value;
-    var email = document.getElementById("email").value;
     var phone = document.getElementById("phone").value;
     var password = document.getElementById("password").value;
     var isOwner = document.getElementById("owner").checked;
 
-    var redirectUrl = isOwner ? 'owner.html' : 'profile.html';
+    // Validate password
+    function isValidPassword(password) {
+        console.log("Validating password:", password);
+        // Password must contain at least one capital letter, one lowercase letter, one number, and be at least 8 characters long
+        var capitalRegex = /[A-Z]/;
+        var lowercaseRegex = /[a-z]/;
+        var numberRegex = /[0-9]/;
+        var isValid = password.length >= 8 && capitalRegex.test(password) && lowercaseRegex.test(password) && numberRegex.test(password);
+        console.log("Password is valid:", isValid);
+        console.log("Length:", password.length);
+        console.log("Capital:", capitalRegex.test(password));
+        console.log("Lowercase:", lowercaseRegex.test(password));
+        console.log("Number:", numberRegex.test(password));
+        return isValid;
+    }
 
-    // Redirect based on user type
-    window.location.href = redirectUrl + '?fullname=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(email) + '&phone=' + encodeURIComponent(phone);
+    // Store user information in localStorage
+    var userData = {
+        fullname: fullname,
+        email: email,
+        phone: phone,
+        password: password,
+        userType: isOwner ? "owner" : "coworker"
+    };
+    localStorage.setItem("userData", JSON.stringify(userData));
 
-    // Optional: You can also send the password securely to the server for authentication
+    // Redirect to respective profile page
+    var redirectUrl = isOwner ? 'owner-profile.html' : 'coworker-profile.html'; // Corrected URL
+    window.location.href = redirectUrl;
 });
