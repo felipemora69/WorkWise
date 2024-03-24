@@ -34,8 +34,9 @@ function goToProfilePage() {
     signupContainer.style.transition = 'opacity 5s'; // Transition duration
     signupContainer.style.opacity = 1;
     setTimeout(() => {
-        // Redirect to the profile page
-        window.location.href = 'coworker-profile.html';
+        // Redirect to the respective profile page
+        var redirectUrl = isOwner ? 'owner-profile.html' : 'coworker-profile.html';
+        window.location.href = redirectUrl;
     }, 5000); // Wait for the transition to complete
 }
 
