@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Co Worker Profile</title>
+    <title>Co-Worker Profile</title>
 </head>
 <body>
     <header class="header">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="menu">
                     <ul class="menu-list">
-                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="FindaWorkspace.html">Solutions</a></li>
                         <li><a class="a2" href="contactus.html">Contact Us</a></li>
                         <li><a href="login.html" class="login-link" >Login<li><a href="signup.html" class="signup-link">SignUp</a></li></a></li>
                     </ul>
@@ -23,34 +23,35 @@
         </nav>
     </header>
 
-    <!-- Placeholder for sticky navbar -->
-    <div class="navbar-placeholder"></div>
+    <!-- Main content -->
+    <div class="container">
+        <h1>Welcome to Your Profile!</h1>
+        <p>Hello <span id="name"></span>, welcome to your coworker profile. Here, you can manage your space rentals and explore available amenities.</p>
 
-    <h1>User Profile</h1>
-    <div id="user-info">
-        <h2>Name</h2>
-        <div id="name"></div>
-        <h2>Last Name</h2>
-        <div id="lastName"></div>
-        <h2>Email</h2>
-        <div id="email"></div>
-        <h2>Phone Number</h2>
-        <div id="phoneNumber"></div>
-        <!-- User information will be dynamically populated here -->
-    </div>
-    <div id="rentals">
-        <h2>My Rentals</h2>
-        <ul id="rentals-list">
-            <!-- User's rentals will be dynamically populated here -->
-        </ul>
+        <!-- User Information Section -->
+        <section id="user-info">
+            <h2>User Information</h2>
+            <div><strong>Name:</strong> <span id="name"></span></div>
+            <div><strong>Last Name:</strong> <span id="lastName"></span></div>
+            <div><strong>Email:</strong> <span id="email"></span></div>
+            <div><strong>Phone Number:</strong> <span id="phoneNumber"></span></div>
+        </section>
+
+        <!-- My Rentals Section -->
+        <section id="rentals">
+            <h2>My Rentals</h2>
+            <ul id="rentals-list">
+                <!-- User's rentals will be dynamically populated here -->
+            </ul>
+        </section>
     </div>
 
     <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#solutions.html">Solutions</a></li>
+        <!--<li><a href="#">About</a></li>-->
+            <li><a href="FindaWorkspace.html">Solutions</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </div>
